@@ -1,16 +1,18 @@
 import { useState } from 'react'
 
-const SearchForm = ({ setBooks, setIsLoading, fetchData }) => {
+const SearchForm = ({ setSearch, setPage }) => {
 
     const [input, setInput] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
-        setBooks([])
-        setIsLoading(true)
-        const query = input.toLowerCase().split(' ').join('+')
 
-        fetchData(query)
+        setSearch('')
+        setPage(1)
+
+        const query = input.toLowerCase().split(' ').join('+')
+        setSearch(query)
+        
         setInput('')
     }
 
@@ -28,7 +30,7 @@ const SearchForm = ({ setBooks, setIsLoading, fetchData }) => {
                     />
                 </div>
                 <div className="form-group">
-                    <button className="btn btn-block" type="submit">Find Book</button> 
+                    <button className="btn btn-block" type="submit">Search</button> 
                 </div>
             </form>
         </section>

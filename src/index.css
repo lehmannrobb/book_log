@@ -129,21 +129,30 @@ body {
 
 .pagination {
   width: 100%;
-  margin: 1.75rem 0 1.75rem 0;
+  margin: 0.5rem 0 1.75rem 0;
 }
 
 .btn-wrapper {
   width: 100%;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
+}
+
+.btn-left {
+  float: left;
+}
+
+.btn-right {
+  float: right;
 }
 
 .page-toggle {
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.fa-btn:hover {
+  transform: scale(1.1);
 }
 
 .page-toggle h3 {

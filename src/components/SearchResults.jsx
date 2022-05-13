@@ -13,7 +13,11 @@ const SearchResults = ({ books, isLoading }) => {
           <div key={book.id} className="book">
             <div className="cover">
                 {book.cover_img ?
-                <img src={`https://covers.openlibrary.org/b/id/${book.cover_img}-M.jpg`} /> 
+                  <img
+                    className='cover-img' 
+                    src={`https://covers.openlibrary.org/b/id/${book.cover_img}-M.jpg`}
+                    alt='Book cover'
+                  /> 
                 : 
                     <>
                         <FaImage size={'42px'} />
@@ -22,7 +26,7 @@ const SearchResults = ({ books, isLoading }) => {
                 }
             </div>
             <h2>{book.title}</h2>
-            <p>-{book.author}</p>
+            <p><em>-{book.author}</em></p>
           </div>
         ))}
     </div>
