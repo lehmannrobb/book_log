@@ -1,17 +1,14 @@
 import { useState } from 'react'
 
-const SearchForm = ({ setSearch, setPage }) => {
+const SearchForm = ({ setQuery, setPage }) => {
 
     const [input, setInput] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
 
-        setSearch('')
         setPage(1)
-
-        const query = input.toLowerCase().split(' ').join('+')
-        setSearch(query)
+        setQuery(input.toLowerCase().split(' ').join('+'))
         
         setInput('')
     }
