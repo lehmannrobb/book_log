@@ -1,25 +1,25 @@
 import { useState } from 'react'
-import { FaSearch } from 'react-icons/fa'
+// import { FaSearch } from 'react-icons/fa'
 
 const Header = ({ setQuery, setPage }) => {
 
     const [input, setInput] = useState('')
 
-    const onSubmit = (e) => {
-        e.preventDefault()
+    // const onSubmit = (e) => {
+    //     e.preventDefault()
 
-        setPage(1)
-        setQuery(input.toLowerCase().split(' ').join('+'))
+    //     setPage(1)
+    //     setQuery(input.toLowerCase().split(' ').join('+'))
         
-        setInput('')
-    }
+    //     setInput('')
+    // }
 
   return (
     <header className='header'>
         <div className="logo">
-            <img src="https://fontmeme.com/permalink/220515/1329a589861b428dfc5d35ac279564e5.png" alt="logo" />
+            <img src="https://fontmeme.com/permalink/220515/287d1716e27ea3e1dc4aaf2574ae8b63.png" alt="netflix-font" />
         </div>
-        <section className="form-container">
+        {/* <section className="form-container">
             <form onSubmit={onSubmit} className='form'>
                 <div className="form-group">
                     <input 
@@ -36,7 +36,7 @@ const Header = ({ setQuery, setPage }) => {
                     </button> 
                 </div>
             </form>
-        </section>
+        </section> */}
     </header>
   )
 }

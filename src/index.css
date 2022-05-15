@@ -19,25 +19,51 @@ body {
   align-items: center;
 }
 
-/* Start search */
-
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.logo {
-  margin: 0.5rem 1rem 0 0;
+/* Start form */
+
+.search-form,
+.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  width: 75%;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  z-index: 99;
 }
 
 .form {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form-group {
   width: 100%;
 }
 
@@ -47,11 +73,12 @@ body {
   border: 1px solid #e6e6e6;
   border-radius: 2px;
   font-family: inherit;
+  font-size: 18px;
 }
 
 .btn {
   padding: 10px;
-  margin-left: 5px;
+  margin: 5px 0;
   border: 1px solid #DB202C;
   border-radius: 2px;
   background: #DB202C;
@@ -71,9 +98,9 @@ body {
   transform: scale(0.98);
 }
 
-/* End search */
+/* End form */
 
-/* Start Spinner */
+/* Start spinner */
 
 .loadingSpinnerContainer {
   position: fixed;
@@ -111,7 +138,7 @@ body {
   }
 }
 
-/* End Spinner */
+/* End spinner */
 
 /* Start results */
 
@@ -120,7 +147,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 2rem;
-  margin: 4rem 0 4rem 0;
+  margin: 1rem 0 4rem 0;
 }
 
 .book {
@@ -210,10 +237,16 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  list-style-type: none;
 }
 
 .row ul li {
   color: #f4f4f4;
+  cursor: pointer;
+}
+
+.row ul li:hover {
+  color: #777;
 }
 
 /* End footer */
