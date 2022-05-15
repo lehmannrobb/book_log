@@ -1,7 +1,7 @@
-import { FaImage } from 'react-icons/fa'
+import { FaImage, FaPlus } from 'react-icons/fa'
 import Spinner from './Spinner'
 
-const SearchResults = ({ books, isLoading }) => {
+const Books = ({ books, isLoading, onAdd }) => {
 
     if (isLoading) {
         return <Spinner />
@@ -25,12 +25,19 @@ const SearchResults = ({ books, isLoading }) => {
                     </>
                 }
             </div>
-            <h2>{book.title}</h2>
-            <p><em>-{book.author}</em></p>
+            <button 
+              className='btn add-btn'
+              onClick={() => onAdd(book)}
+            >
+              <FaPlus className='plus' />
+              <h3>Add to list</h3>
+            </button>
+            {/* <h2>{book.title}</h2>
+            <p><em>-{book.author}</em></p> */}
           </div>
         ))}
     </div>
   )
 }
 
-export default SearchResults
+export default Books

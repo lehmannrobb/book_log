@@ -9,6 +9,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
+  background-color: #242526;
 }
 
 .App {
@@ -20,13 +21,17 @@ body {
 
 /* Start search */
 
-.form-container {
-  position: fixed;
-  top: 0;
-  right: 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+  margin: 0.5rem 1rem 0 0;
 }
 
 .form {
@@ -38,23 +43,20 @@ body {
 
 .form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 11px;
   border: 1px solid #e6e6e6;
-  border-radius: 5px;
+  border-radius: 2px;
   font-family: inherit;
 }
 
 .btn {
-  padding: 10px 20px;
-  margin-left: 10px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  background: #000;
+  padding: 10px;
+  margin-left: 5px;
+  border: 1px solid #DB202C;
+  border-radius: 2px;
+  background: #DB202C;
   color: #fff;
-  font-size: 16px;
-  font-weight: 700;
   cursor: pointer;
-  text-align: center;
   appearance: button;
   display: flex;
   align-items: center;
@@ -91,9 +93,13 @@ body {
   height: 64px;
   margin: 1rem 0;
   border: 8px solid;
-  border-color: #000 transparent #555 transparent;
+  border-color: #000 transparent #DB202C transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
+}
+
+.loadingSpinnerContainer h3 {
+  color: #f4f4f4;
 }
 
 @keyframes spin {
@@ -120,9 +126,35 @@ body {
 .book {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+  /* width: 250px; */
+  height: auto;
+  margin-top: 1rem;
+}
+
+.cover img {
+  border-radius: 2px;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+/* .book h2,
+.book p {
+  color: #f4f4f4;
+} */
+
+.add-btn {
+  width: auto;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn h3 {
+  font-size: 16px;
+  margin-left: 0.5rem;
 }
 
 /* End results */
@@ -151,6 +183,7 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: #f4f4f4;
 }
 
 .fa-btn:hover {
@@ -162,6 +195,28 @@ body {
 }
 
 /* End pagination */
+
+/* Start footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+}
+
+.row ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.row ul li {
+  color: #f4f4f4;
+}
+
+/* End footer */
 
 @media (max-width: 768px) {
   .container {
