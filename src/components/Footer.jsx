@@ -5,10 +5,11 @@ import {
     FaBookOpen
  } from 'react-icons/fa'
 
-const Footer = ({ toggleForm }) => {
+const Footer = ({ toggleForm, setShowForm }) => {
 
     const goTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
+        setShowForm(false)
     }
 
   return (
@@ -25,9 +26,9 @@ const Footer = ({ toggleForm }) => {
                 >
                     <FaSearch size={'24px'}  />
                 </li>
-                <li>
+                {/* <li>
                     <FaRandom size={'24px'} />
-                </li>
+                </li> */}
                 <li>
                     <FaBookOpen size={'24px'} />
                 </li>

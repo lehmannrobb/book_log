@@ -1,16 +1,10 @@
-import { FaImage, FaPlus } from 'react-icons/fa'
-import Spinner from './Spinner'
+import { FaImage, FaTimes } from 'react-icons/fa'
 
-const Books = ({ books, isLoading, onAdd }) => {
-
-    if (isLoading) {
-        return <Spinner />
-    }
-
+const List = ({ list, onDelete }) => {
   return (
-    <div className='container'>
-        {books.map(book => (
-          <div key={book.id} className="book">
+    <div className="book-list">
+        {list.map(book => (
+          <div key={book.id} className="book-row">
             <div className="cover">
                 {book.cover_img ?
                   <img
@@ -25,17 +19,20 @@ const Books = ({ books, isLoading, onAdd }) => {
                     </>
                 }
             </div>
-            <button 
-              className='add-btn'
-              onClick={() => onAdd(book)}
+            <div className='book-info'>
+              <h2>{book.title}</h2>
+              <p><em>-{book.author}</em></p>
+            </div>
+            <div 
+              className='dlt-btn'
+              onClick={() => onDelete(book.id)}
             >
-              <FaPlus className='plus' />
-              <h3>Add to list</h3>
-            </button>
+              <FaTimes size={'24px'} />
+            </div>
           </div>
         ))}
     </div>
   )
 }
 
-export default Books
+export default List
