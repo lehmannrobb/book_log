@@ -5,12 +5,18 @@ import {
     FaBookOpen
  } from 'react-icons/fa'
 
-const Footer = ({ toggleForm, setShowForm }) => {
+const Footer = ({ toggleForm, setShowForm, list }) => {
+
+    let total = list.length
 
     const goTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
         setShowForm(false)
     }
+
+    // const getRandom = () => {
+    //     fetchRandom()
+    // }
 
   return (
     <footer>
@@ -19,18 +25,23 @@ const Footer = ({ toggleForm, setShowForm }) => {
                 <li
                     onClick={goTop}
                 >
-                    <FaHome size={'24px'} />
+                    <FaHome size={'28px'} />
                 </li>
                 <li
                     onClick={toggleForm}
                 >
-                    <FaSearch size={'24px'}  />
+                    <FaSearch size={'28px'}  />
                 </li>
-                {/* <li>
-                    <FaRandom size={'24px'} />
+                {/* <li
+                    onClick={getRandom}
+                >
+                    <FaRandom size={'28px'} />
                 </li> */}
                 <li>
-                    <FaBookOpen size={'24px'} />
+                    <div className="total-wrapper">
+                        <FaBookOpen size={'28px'} />
+                        <div className='circle'>{total}</div>
+                    </div>
                 </li>
             </ul>
         </div>

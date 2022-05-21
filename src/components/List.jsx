@@ -9,7 +9,7 @@ const List = ({ list, onDelete }) => {
                 {book.cover_img ?
                   <img
                     className='cover-img' 
-                    src={`https://covers.openlibrary.org/b/id/${book.cover_img}-M.jpg`}
+                    src={`https://covers.openlibrary.org/b/id/${book.cover_img}-L.jpg`}
                     alt='Book cover'
                   /> 
                 : 
@@ -20,7 +20,7 @@ const List = ({ list, onDelete }) => {
                 }
             </div>
             <div className='book-info'>
-              <h2>{book.title}</h2>
+              <h1>{book.title}</h1>
               <p><em>-{book.author}</em></p>
             </div>
             <div 

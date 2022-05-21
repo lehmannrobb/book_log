@@ -15,7 +15,7 @@ const Books = ({ books, isLoading, onAdd }) => {
                 {book.cover_img ?
                   <img
                     className='cover-img' 
-                    src={`https://covers.openlibrary.org/b/id/${book.cover_img}-M.jpg`}
+                    src={`https://covers.openlibrary.org/b/id/${book.cover_img}-L.jpg`}
                     alt='Book cover'
                   /> 
                 : 

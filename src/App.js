@@ -64,6 +64,28 @@ function App() {
     
   }
 
+  // // Get random book
+  // const fetchRandom = async () => {
+  //   setIsLoading(true)
+  //   setBooks([])
+  //   setShowForm(true)
+
+  //   await fetch('http://openlibrary.org/search.json?q=tolkien')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     setBooks([{
+  //       id: uuidv4(),
+  //       isbn: data.docs[0].isbn,
+  //       title: data.docs[0].title ? data.docs[0].title : '',
+  //       author: data.docs[0].author_name ? data.docs[0].author_name[0] : '',
+  //       cover_img: data.docs[0].cover_i
+  //     }])
+  //   })
+  //   .catch(err => console.log(err))
+
+  //   setIsLoading(false)
+  // }
+
   // Toggle search form
   const toggleForm = () => {
     setShowForm(!showForm)
@@ -86,7 +108,7 @@ function App() {
         />
       }
       {!showForm && <List list={list} onDelete={deleteBook} />}
-      <Footer toggleForm={toggleForm} setShowForm={setShowForm} />
+      <Footer toggleForm={toggleForm} setShowForm={setShowForm} list={list} />
     </div>
   );
 }

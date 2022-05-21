@@ -34,10 +34,14 @@ body::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+img {
+  object-fit: contain;
+}
+
 /* Start list */
 
 .book-list {
-  margin: 1rem 0 4rem 0;
+  margin: 1rem 1rem 5.5rem 1rem;
 }
 
 .book-row {
@@ -59,6 +63,7 @@ body::-webkit-scrollbar {
 .book-info {
   width: 50%;
   color: #f4f4f4;
+  margin-left: 1rem;
 }
 
 /* End list */
@@ -83,7 +88,6 @@ body::-webkit-scrollbar {
 .search-field {
   position: absolute;
   width: 100%;
-  /* margin: 1.5rem; */
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -148,8 +152,7 @@ body::-webkit-scrollbar {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 2rem;
-  /* z-index: 999; */
-  margin: 2rem 0 0 0;
+  margin: 1rem 0;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
@@ -279,7 +282,7 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .row ul {
@@ -296,6 +299,24 @@ footer {
 
 .row ul li:hover {
   color: #777;
+}
+
+.total-wrapper {
+  display: flex;
+}
+
+.circle {
+  background: #DB202C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 7%;
+  margin-left: 1rem;
+  /* right: 20%; */
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
 }
 
 /* End footer */
