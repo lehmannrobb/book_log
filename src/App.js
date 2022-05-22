@@ -7,6 +7,7 @@ import Search from './components/Search'
 import Footer from './components/Footer'
 // eslint-disable-next-line
 import axios from 'axios'
+// eslint-disable-next-line
 import { v4 as uuidv4 } from 'uuid'
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
 
           if (doc.cover_i) {
             setBooks(books => [...books, {
-              id: uuidv4(),
+              id: doc.key,
               isbn: doc.isbn,
               title: doc.title ? doc.title : '',
               author: doc.author_name ? doc.author_name[0] : '',

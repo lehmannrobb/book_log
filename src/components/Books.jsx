@@ -25,7 +25,7 @@ const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
                     </>
                 }
             </div>
-            {!list.some(item => item.title === book.title) ?
+            {!list.some(item => item.id === book.id) ?
               <div 
                 className='book-btn'
                 onClick={() => onAdd(book)}
