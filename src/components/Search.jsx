@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Books from './Books'
 import { FaSearch, FaTimesCircle } from 'react-icons/fa'
 
-const Search = ({ toggleForm, isLoading, setIsLoading, books, setBooks, fetchData, onAdd }) => {
+const Search = ({ isLoading, setIsLoading, books, setBooks, fetchData, onAdd, onDelete, list }) => {
 
     const [input, setInput] = useState('')
 
@@ -15,14 +15,11 @@ const Search = ({ toggleForm, isLoading, setIsLoading, books, setBooks, fetchDat
 
         fetchData(query)
         setInput('')
+        console.log(list);
     }
 
   return (
     <div className="search-form">
-        <div 
-            className="overlay"
-            onClick={toggleForm}
-        ></div>
         <div className="search-field">
             <form 
                 onSubmit={onSubmit}
@@ -38,6 +35,7 @@ const Search = ({ toggleForm, isLoading, setIsLoading, books, setBooks, fetchDat
                     value={input} 
                     onChange={(e) => setInput(e.target.value)}
                     autoComplete="off"
+                    autoFocus="on"
                 />
                 <span 
                     className='clear-search' 
@@ -50,6 +48,8 @@ const Search = ({ toggleForm, isLoading, setIsLoading, books, setBooks, fetchDat
             books={books} 
             isLoading={isLoading} 
             onAdd={onAdd}
+            onDelete={onDelete}
+            list={list}
         />
     </div>
   )

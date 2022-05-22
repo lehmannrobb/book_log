@@ -1,6 +1,10 @@
 import { FaImage, FaTimes } from 'react-icons/fa'
 
 const List = ({ list, onDelete }) => {
+  // const getMore = (book) => {
+  //   console.log(book.id);
+  // }
+
   return (
     <div className="book-list">
         {list.map(book => (
@@ -29,6 +33,12 @@ const List = ({ list, onDelete }) => {
             >
               <FaTimes size={'24px'} />
             </div>
+            {/* <div 
+              className='arrow'
+              onClick={() => getMore(book)}
+            >
+              <FaChevronRight size={'36px'} />
+            </div> */}
           </div>
         ))}
     </div>

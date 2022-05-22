@@ -1,7 +1,7 @@
-import { FaImage, FaPlus } from 'react-icons/fa'
+import { FaImage, FaPlusCircle, FaCheckCircle } from 'react-icons/fa'
 import Spinner from './Spinner'
 
-const Books = ({ books, isLoading, onAdd }) => {
+const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
 
     if (isLoading) {
         return <Spinner />
@@ -25,13 +25,27 @@ const Books = ({ books, isLoading, onAdd }) => {
                     </>
                 }
             </div>
-            <button 
-              className='add-btn'
-              onClick={() => onAdd(book)}
-            >
-              <FaPlus className='plus' />
-              <h3>Add to list</h3>
-            </button>
+            {!list.some(item => item.title === book.title) ?
+              <div 
+                className='book-btn'
+                onClick={() => onAdd(book)}
+              >
+                <div className="plus">
+                  <FaPlusCircle size={'28px'} />
+                </div>
+                {/* <h3>My List</h3> */}
+              </div>
+            :
+              <div
+                className='book-btn'
+                onClick={() => onDelete(book.id)}
+              >
+                <div className="check">
+                  <FaCheckCircle size={'28px'} />
+                </div>
+                {/* <h3>My List</h3> */}
+              </div>
+            }
           </div>
         ))}
     </div>

@@ -104,7 +104,9 @@ function App() {
           books={books}
           setBooks={setBooks} 
           fetchData={fetchData}
-          onAdd={addBook} 
+          onAdd={addBook}
+          onDelete={deleteBook}
+          list={list}
         />
       }
       {!showForm && <List list={list} onDelete={deleteBook} />}
