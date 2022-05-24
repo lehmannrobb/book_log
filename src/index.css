@@ -49,10 +49,11 @@ img {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   margin: 1rem 0;
   border-radius: 3px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .dlt-btn {

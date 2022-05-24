@@ -26,7 +26,7 @@ const Search = ({ isLoading, setIsLoading, books, setBooks, fetchData, onAdd, on
                 className='form'
             >
                 <span className='search-icon'>
-                    <FaSearch size={'24px'} />
+                    <FaSearch size={'28px'} />
                 </span>
                 <input 
                     type="text" 
@@ -40,7 +40,7 @@ const Search = ({ isLoading, setIsLoading, books, setBooks, fetchData, onAdd, on
                 <span 
                     className='clear-search' 
                     onClick={() => setInput('')}>
-                    <FaTimesCircle size={'24px'} />
+                    <FaTimesCircle size={'28px'} />
                 </span>
             </form>
         </div>

@@ -1,21 +1,14 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
-// import Books from './components/Books'
 import List from './components/List'
-// import Pagination from './components/Pagination'
 import Search from './components/Search'
 import Footer from './components/Footer'
-// eslint-disable-next-line
-import axios from 'axios'
-// eslint-disable-next-line
-import { v4 as uuidv4 } from 'uuid'
 
 function App() {
 
   const [books, setBooks] = useState([])
   const [list, setList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-  // const [page, setPage] = useState(1)
   const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
@@ -29,8 +22,7 @@ function App() {
   
   // Fetch book data from API
   const fetchData = async (query) => {
-    const URL = `http://openlibrary.org/search.json?q=${query}`;
-
+    const URL = `http://openlibrary.org/search.json?q=${query}`
 
     await fetch(URL)
     .then(res => res.json())
@@ -64,28 +56,6 @@ function App() {
     setList(list.filter(book => book.id !== id))
     
   }
-
-  // // Get random book
-  // const fetchRandom = async () => {
-  //   setIsLoading(true)
-  //   setBooks([])
-  //   setShowForm(true)
-
-  //   await fetch('http://openlibrary.org/search.json?q=tolkien')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     setBooks([{
-  //       id: uuidv4(),
-  //       isbn: data.docs[0].isbn,
-  //       title: data.docs[0].title ? data.docs[0].title : '',
-  //       author: data.docs[0].author_name ? data.docs[0].author_name[0] : '',
-  //       cover_img: data.docs[0].cover_i
-  //     }])
-  //   })
-  //   .catch(err => console.log(err))
-
-  //   setIsLoading(false)
-  // }
 
   // Toggle search form
   const toggleForm = () => {

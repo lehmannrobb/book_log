@@ -1,9 +1,6 @@
 import { FaImage, FaTimes } from 'react-icons/fa'
 
 const List = ({ list, onDelete }) => {
-  // const getMore = (book) => {
-  //   console.log(book.id);
-  // }
 
   return (
     <div className="book-list">
@@ -31,14 +28,8 @@ const List = ({ list, onDelete }) => {
               className='dlt-btn'
               onClick={() => onDelete(book.id)}
             >
-              <FaTimes size={'24px'} />
+              <FaTimes size={'28px'} />
             </div>
-            {/* <div 
-              className='arrow'
-              onClick={() => getMore(book)}
-            >
-              <FaChevronRight size={'36px'} />
-            </div> */}
           </div>
         ))}
     </div>
