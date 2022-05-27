@@ -1,5 +1,5 @@
 # Book Log
-A Netflix styled app that fetches data from Open Library API to use in keeping track of a reading list.
+A Netflix styled application that fetches data from Open Library API to use in keeping track of a reading list.
 
 ![App Screenshot](public/screenshot.jpg)
 
