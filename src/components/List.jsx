@@ -22,7 +22,9 @@ const List = ({ list, onDelete }) => {
             </div>
             <div className='book-info'>
               <h1>{book.title}</h1>
-              <p><em>-{book.author}</em></p>
+              <h3><em>-{book.author}</em></h3>
+              <br></br>
+              <p>Published: {book.published}</p>
             </div>
             <div 
               className='dlt-btn'

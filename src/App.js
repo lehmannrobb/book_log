@@ -27,6 +27,7 @@ function App() {
     await fetch(URL)
     .then(res => res.json())
     .then(data => {
+      console.log(data.docs)
         data.docs.forEach(doc => {
 
           if (doc.cover_i) {
@@ -35,6 +36,7 @@ function App() {
               isbn: doc.isbn,
               title: doc.title ? doc.title : '',
               author: doc.author_name ? doc.author_name[0] : '',
+              published: doc.first_publish_year ? doc.first_publish_year : '',
               cover_img: doc.cover_i
             }])
           }
