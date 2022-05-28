@@ -15,7 +15,6 @@ const Search = ({ isLoading, setIsLoading, results, setResults, fetchData }) => 
 
         fetchData(query)
         setInput('')
-        // console.log(list);
     }
 
   return (

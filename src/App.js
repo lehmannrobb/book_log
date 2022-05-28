@@ -24,7 +24,6 @@ function App() {
     await fetch(URL)
     .then(res => res.json())
     .then(data => {
-      console.log(data.docs)
         data.docs.forEach(doc => {
 
           if (doc.cover_i) {
@@ -47,7 +46,6 @@ function App() {
   const toggleForm = () => {
     setShowForm(!showForm)
     setResults([])
-    console.log(showForm)
   }
 
   return (
