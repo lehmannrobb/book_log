@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const storedBooks = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE_KEY))
+
 export const bookSlice = createSlice({
     name: 'books',
     initialState: {
-        value: [],
+        value: storedBooks ? storedBooks : [],
     },
     reducers: {
         addBook: (state, action) => {
