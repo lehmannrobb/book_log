@@ -25,4 +25,4 @@ $ npm start
 ```
 
 ## Use
-Search for a book from the library and find the book you would like to add to list, click the '+' button to add to your list
+Search for a book from the library and find the book you would like to add to list, click the '+' button to add to your list or click the same button to remove from your list.
