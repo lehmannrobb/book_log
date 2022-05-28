@@ -8,7 +8,6 @@ A Netflix styled application that fetches data from Open Library API to use in k
 - Add randomizer function
 - Add book info popups and links to full text
 - Reimplement pagination
-- Implement redux for state management
 
 ## Run
 Clone the repository, then...
