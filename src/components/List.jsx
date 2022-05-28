@@ -1,10 +1,16 @@
 import { FaImage, FaTimes } from 'react-icons/fa'
+import { useSelector, useDispatch } from 'react-redux'
+import { deleteBook } from '../features/bookSlice'
 
-const List = ({ list, onDelete }) => {
+const List = () => {
+
+  const dispatch = useDispatch()
+
+  const bookList = useSelector((state) => state.books.value)
 
   return (
     <div className="book-list">
-        {list.map(book => (
+        {bookList.map(book => (
           <div key={book.id} className="book-row">
             <div className="cover">
                 {book.cover_img ?
@@ -28,7 +34,7 @@ const List = ({ list, onDelete }) => {
             </div>
             <div 
               className='dlt-btn'
-              onClick={() => onDelete(book.id)}
+              onClick={() => dispatch(deleteBook(book.id))}
             >
               <FaTimes size={'28px'} />
             </div>

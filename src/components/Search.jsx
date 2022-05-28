@@ -1,21 +1,20 @@
 import { useState } from 'react'
-import Books from './Books'
+import Results from './Results'
 import { FaSearch, FaTimesCircle } from 'react-icons/fa'
 
-const Search = ({ isLoading, setIsLoading, books, setBooks, fetchData, onAdd, onDelete, list }) => {
+const Search = ({ isLoading, setIsLoading, results, setResults, fetchData }) => {
 
     const [input, setInput] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
         setIsLoading(true)
-        setBooks([])
+        setResults([])
 
         let query = input.toLowerCase().split(' ').join('+')
 
         fetchData(query)
         setInput('')
-        console.log(list);
     }
 
   return (
@@ -44,12 +43,9 @@ const Search = ({ isLoading, setIsLoading, books, setBooks, fetchData, onAdd, on
                 </span>
             </form>
         </div>
-        <Books 
-            books={books} 
+        <Results 
+            results={results} 
             isLoading={isLoading} 
-            onAdd={onAdd}
-            onDelete={onDelete}
-            list={list}
         />
     </div>
   )

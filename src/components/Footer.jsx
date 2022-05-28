@@ -4,10 +4,13 @@ import {
     FaRandom,
     FaBookOpen
  } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 
-const Footer = ({ toggleForm, setShowForm, list }) => {
+const Footer = ({ toggleForm, setShowForm }) => {
 
-    let total = list.length
+    const bookList = useSelector((state) => state.books.value)
+
+    let total = bookList.length
 
     const goTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })

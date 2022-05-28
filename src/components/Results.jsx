@@ -1,7 +1,13 @@
 import { FaImage, FaPlusCircle, FaCheckCircle } from 'react-icons/fa'
+import { useSelector, useDispatch } from 'react-redux'
+import { addBook, deleteBook } from '../features/bookSlice'
 import Spinner from './Spinner'
 
-const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
+const Results = ({ results, isLoading }) => {
+
+  const dispatch = useDispatch()
+
+  const bookList = useSelector((state) => state.books.value)
 
     if (isLoading) {
         return <Spinner />
@@ -9,13 +15,13 @@ const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
 
   return (
     <div className='container'>
-        {books.map(book => (
-          <div key={book.id} className="book">
+        {results.map(result => (
+          <div key={result.id} className="book">
             <div className="cover">
-                {book.cover_img ?
+                {result.cover_img ?
                   <img
                     className='cover-img' 
-                    src={`https://covers.openlibrary.org/b/id/${book.cover_img}-L.jpg`}
+                    src={`https://covers.openlibrary.org/b/id/${result.cover_img}-L.jpg`}
                     alt='Book cover'
                   /> 
                 : 
@@ -25,10 +31,10 @@ const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
                     </>
                 }
             </div>
-            {!list.some(item => item.id === book.id) ?
+            {!bookList.some(book => book.id === result.id) ?
               <div 
                 className='book-btn'
-                onClick={() => onAdd(book)}
+                onClick={() => dispatch(addBook(result))}
               >
                 <div className="plus">
                   <FaPlusCircle size={'28px'} />
@@ -38,7 +44,7 @@ const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
             :
               <div
                 className='book-btn'
-                onClick={() => onDelete(book.id)}
+                onClick={() => dispatch(deleteBook(result.id))}
               >
                 <div className="check">
                   <FaCheckCircle size={'28px'} />
@@ -52,4 +58,4 @@ const Books = ({ books, isLoading, onAdd, onDelete, list }) => {
   )
 }
 
-export default Books
+export default Results
