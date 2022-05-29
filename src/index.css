@@ -34,9 +34,9 @@ body::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-img {
+/* img {
   object-fit: contain;
-}
+} */
 
 /* Start list */
 
@@ -53,6 +53,11 @@ img {
   border-radius: 3px;
   padding: 10px;
   cursor: pointer;
+}
+
+.book-row:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+  transform: translateY(-2px);
 }
 
 .book-row:not(:first-child) {
@@ -81,6 +86,79 @@ img {
 }
 
 /* End list */
+
+/* Start modal */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #f4f4f4;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.book-modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+.full-cover {
+  max-height: 200px;
+  width: auto;
+}
+
+.modal-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 1.5rem;
+}
+
+.modal-info p {
+  font-weight: 600;
+}
+
+.modal-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal-btn h3 {
+  margin-left: 8px;
+}
+/* End modal */
 
 /* Start search */
 
@@ -329,5 +407,9 @@ footer {
 @media (max-width: 768px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .book-row:hover {
+    transform: none;
   }
 }

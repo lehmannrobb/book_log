@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import Header from './components/Header'
 import List from './components/List'
 import Search from './components/Search'
+import Modal from './components/Modal'
 import Footer from './components/Footer'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [results, setResults] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [showForm, setShowForm] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     localStorage.setItem(process.env.REACT_APP_LOCAL_STORAGE_KEY, JSON.stringify(bookList))
@@ -48,6 +50,12 @@ function App() {
     setResults([])
   }
 
+  // Toggle modal
+  const toggleModal = () => {
+    setShowModal(!showModal)
+    console.log(showModal)
+  }
+
   return (
     <div className="App">
       {!showForm && <Header />}
@@ -61,8 +69,27 @@ function App() {
           fetchData={fetchData}
         />
       }
-      {!showForm && <List />}
-      <Footer toggleForm={toggleForm} setShowForm={setShowForm} />
+      {!showForm && 
+        <List 
+          toggleModal={toggleModal}
+          setIsLoading={setIsLoading}
+          results={results}
+          setResults={setResults}
+          fetchData={fetchData}  
+        />
+      }
+      {showModal &&
+       <Modal 
+          toggleModal={toggleModal}
+          isLoading={isLoading} 
+          results={results}
+        />
+      }
+      <Footer 
+        toggleForm={toggleForm} 
+        setShowForm={setShowForm}
+        setShowModal={setShowModal}
+      />
     </div>
   );
 }

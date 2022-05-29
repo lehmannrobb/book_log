@@ -2,16 +2,30 @@ import { FaImage, FaTimes } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteBook } from '../features/bookSlice'
 
-const List = () => {
+const List = ({ toggleModal, setIsLoading, results, setResults, fetchData }) => {
 
   const dispatch = useDispatch()
 
   const bookList = useSelector((state) => state.books.value)
 
+  const getMore = (book) => {
+    toggleModal()
+    setIsLoading(true)
+    setResults([])
+
+    let query = book.isbn[0]
+
+    fetchData(query)
+    console.log(results)
+  }
+
   return (
     <div className="book-list">
         {bookList.map(book => (
-          <div key={book.id} className="book-row">
+          <div 
+            key={book.id} 
+            className="book-row"
+          >
             <div className="cover">
                 {book.cover_img ?
                   <img
@@ -26,7 +40,10 @@ const List = () => {
                     </>
                 }
             </div>
-            <div className='book-info'>
+            <div 
+              className='book-info' 
+              onClick={() => getMore(book)}
+            >
               <h1>{book.title}</h1>
               <h3><em>-{book.author}</em></h3>
               <br></br>

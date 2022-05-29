@@ -1,12 +1,11 @@
 import { 
     FaSearch,
     FaHome,
-    FaRandom,
     FaBookOpen
  } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 
-const Footer = ({ toggleForm, setShowForm }) => {
+const Footer = ({ toggleForm, setShowForm, setShowModal }) => {
 
     const bookList = useSelector((state) => state.books.value)
 
@@ -15,11 +14,13 @@ const Footer = ({ toggleForm, setShowForm }) => {
     const goTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
         setShowForm(false)
+        setShowModal(false)
     }
 
-    // const getRandom = () => {
-    //     fetchRandom()
-    // }
+    const openSearch = () => {
+        setShowModal(false)
+        toggleForm()
+    }
 
   return (
     <footer>
@@ -31,15 +32,10 @@ const Footer = ({ toggleForm, setShowForm }) => {
                     <FaHome size={'28px'} />
                 </li>
                 <li
-                    onClick={toggleForm}
+                    onClick={openSearch}
                 >
                     <FaSearch size={'28px'}  />
                 </li>
-                {/* <li
-                    onClick={getRandom}
-                >
-                    <FaRandom size={'28px'} />
-                </li> */}
                 <li>
                     <div className="total-wrapper">
                         <FaBookOpen size={'28px'} />

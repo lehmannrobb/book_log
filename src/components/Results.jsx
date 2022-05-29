@@ -39,7 +39,6 @@ const Results = ({ results, isLoading }) => {
                 <div className="plus">
                   <FaPlusCircle size={'28px'} />
                 </div>
-                {/* <h3>My List</h3> */}
               </div>
             :
               <div
@@ -49,7 +48,6 @@ const Results = ({ results, isLoading }) => {
                 <div className="check">
                   <FaCheckCircle size={'28px'} />
                 </div>
-                {/* <h3>My List</h3> */}
               </div>
             }
           </div>
