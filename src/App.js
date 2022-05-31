@@ -26,6 +26,7 @@ function App() {
     await fetch(URL)
     .then(res => res.json())
     .then(data => {
+      console.log(data)
         data.docs.forEach(doc => {
 
           if (doc.cover_i) {
