@@ -81,8 +81,13 @@ body::-webkit-scrollbar {
   margin-left: 1rem;
 }
 
+.book-info .author,
+.book-info .date {
+  display: flex;
+}
+
 .book-info p {
-  font-weight: 600;
+  margin-left: 10px;
 }
 
 /* End list */
@@ -122,6 +127,10 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
+.book-modal div {
+  margin: 10px;
+}
+
 .modal-col {
   display: flex;
   flex-direction: column;
@@ -136,6 +145,7 @@ body::-webkit-scrollbar {
   max-height: 275px;
   width: auto;
   margin-left: auto;
+  border-radius: 4px;
 }
 
 .modal-title {
@@ -150,8 +160,18 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
-.modal-info p {
-  font-weight: 600;
+.row-left div {
+  display: flex;
+}
+
+.row-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-left div > p {
+  margin-left: 10px;
 }
 
 .modal-btn {

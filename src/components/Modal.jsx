@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addBook, deleteBook } from '../features/bookSlice'
 import { FaPlusCircle, FaCheckCircle } from 'react-icons/fa'
 import { v4 as uuidv4 } from 'uuid'
-// eslint-disable-next-line
 import Spinner from './Spinner'
 
 const Modal = ({ toggleModal, isLoading, results }) => {
@@ -17,8 +16,9 @@ const Modal = ({ toggleModal, isLoading, results }) => {
         <div className="modal-close" onClick={toggleModal}>
             <FaTimes size={'28px'} />
         </div>
+        { isLoading && <Spinner />}
         {results.map(item => (
-            <div className='book-modal'>
+            <div className='book-modal' key={uuidv4()}>
                 <div className="modal-col">
                     <div className="full-cover">
                         <img
@@ -32,8 +32,14 @@ const Modal = ({ toggleModal, isLoading, results }) => {
                     </div>
                     <div className="modal-info">
                         <div className="row-left">
-                            <h4>Author: {item.author}</h4>
-                            <p>Published: {item.published}</p>
+                            <div className="author">
+                                <h4>Author:</h4>
+                                <p>{item.author}</p>
+                            </div>
+                            <div className="date">
+                                <h4>Published:</h4>
+                                <p>{item.published}</p>
+                            </div>
                         </div>
                         <div className="row-right">
                             {!bookList.some(book => book.id === item.id)

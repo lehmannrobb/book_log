@@ -45,9 +45,14 @@ const List = ({ toggleModal, setIsLoading, results, setResults, fetchData }) => 
               onClick={() => getMore(book)}
             >
               <h1>{book.title}</h1>
-              <h3><em>-{book.author}</em></h3>
-              <br></br>
-              <p>Published: {book.published}</p>
+              <div className="author">
+                <h4>Author:</h4>
+                <p>{book.author}</p>
+              </div>
+              <div className="date">
+                <h4>Published:</h4>
+                <p>{book.published}</p>
+              </div>
             </div>
             <div 
               className='dlt-btn'
