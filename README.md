@@ -6,7 +6,7 @@ A Netflix styled application that fetches data from Open Library API to use in k
 ## Todos
 - Integrate search bar into header?
 - Add randomizer function
-- Add book info popups and links to full text
+- Add links to full text in Modal
 - Reimplement pagination
 
 ## Run
