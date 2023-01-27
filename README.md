@@ -1,15 +1,18 @@
 # Book Log
+
 A Netflix styled application that fetches data from Open Library API to use in keeping track of a reading list.
 
 ![App Screenshot](public/screenshot.jpg)
 
 ## Todos
+
 - Integrate search bar into header?
 - Add randomizer function
 - Add book info popups and links to full text
 - Reimplement pagination
 
 ## Run
+
 Clone the repository, then...
 
 ```bash
@@ -25,4 +28,5 @@ $ npm start
 ```
 
 ## Use
-Search for a book from the library and find the book you would like to add to list, click the '+' button to add to your list or click the same button to remove from your list.
+
+Search for a book from the library and find the book you would like to add to your list, click the '+' button to add to your list or click the same button to remove from your list.
